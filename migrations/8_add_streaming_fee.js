@@ -1,4 +1,4 @@
-const Controller = artifacts.require('TPNLController');
+const Controller = artifacts.require('Controller');
 const SFModule = artifacts.require('StreamingFeeModule');
 const consts = require('../consts');
 

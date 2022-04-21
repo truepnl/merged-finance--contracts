@@ -1,4 +1,4 @@
-const Controller = artifacts.require('TPNLController');
+const Controller = artifacts.require('Controller');
 const IntReg = artifacts.require('IntegrationRegistry');
 const TradeModule = artifacts.require('TradeModule');
 const UniAdapter = artifacts.require('UniswapV2ExchangeAdapterV2');

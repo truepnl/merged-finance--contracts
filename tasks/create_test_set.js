@@ -1,7 +1,5 @@
-const SetToken = artifacts.require("SetTokenPNL");
-const Controller = artifacts.require("TPNLController");
 const Factory = artifacts.require("Factory");
-const BasicModule = artifacts.require("BasicModule");
+const BasicModule = artifacts.require("BasicIssuanceModule");
 const NAVModule = artifacts.require("NavIssueModuleV1");
 const consts = require('../consts');
 
@@ -18,7 +16,6 @@ module.exports = async function(callback) {
   let accounts = await web3.eth.getAccounts();
   const acc = accounts[0];
   const factory = await Factory.deployed();
-  const controller = await Controller.deployed();
   const basicModule = await BasicModule.deployed();
   const navModule = await NAVModule.deployed();
 

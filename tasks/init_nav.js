@@ -1,7 +1,3 @@
-const SetToken = artifacts.require("SetTokenPNL");
-const Controller = artifacts.require("TPNLController");
-const Factory = artifacts.require("Factory");
-const BasicModule = artifacts.require("BasicModule");
 const NAVModule = artifacts.require("NavIssueModuleV1");
 
 const consts = require('../consts');
@@ -16,10 +12,7 @@ const testFeeAcc = "0xD8c916428E953108BccAbEA0ae33919407130862";
 const setToken = "0x6DF58e3B98d8fbc94b25e531ab15BD2AA8B4E0d6";
 module.exports = async function(callback) {
   // const acc = accounts[0];
-  const controller = await Controller.deployed();
-  const basicModule = await BasicModule.deployed();
   const navModule = await NAVModule.deployed();
-  const setTokenC = await SetToken.at(setToken);
 
 
   // ===== ===== ====== == NAV Issue

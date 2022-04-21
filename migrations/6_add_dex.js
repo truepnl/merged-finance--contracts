@@ -1,9 +1,5 @@
-const Controller = artifacts.require('TPNLController');
-const Factory = artifacts.require('Factory');
-const BasicModule = artifacts.require('BasicModule');
+const Controller = artifacts.require('Controller');
 const DEXModule = artifacts.require('DexIssueModuleV1');
-const UniSwapOracle = artifacts.require('UniSwapOracle');
-const Valuer = artifacts.require('Valuer');
 const consts = require('../consts');
 
 module.exports = async function (deployer, n, accounts) {

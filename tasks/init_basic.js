@@ -1,8 +1,4 @@
-const SetToken = artifacts.require("SetTokenPNL");
-const Controller = artifacts.require("TPNLController");
-const Factory = artifacts.require("Factory");
-const BasicModule = artifacts.require("BasicModule");
-const NAVModule = artifacts.require("NAVModule");
+const BasicModule = artifacts.require("BasicIssuanceModule");
 
 const consts = require('../consts');
 

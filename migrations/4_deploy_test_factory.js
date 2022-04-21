@@ -1,7 +1,7 @@
-const Controller = artifacts.require('TPNLController');
+const Controller = artifacts.require('Controller');
 const Factory = artifacts.require('Factory');
-const BasicModule = artifacts.require('BasicModule');
-const DEXModule = artifacts.require('DexIssueModuleV1');
+const BasicModule = artifacts.require('BasicIssuanceModule');
+const NAVModule = artifacts.require('NavIssueModuleV1');
 const UniSwapOracle = artifacts.require('UniSwapOracle');
 const Valuer = artifacts.require('Valuer');
 const consts = require('../consts');
@@ -10,9 +10,13 @@ module.exports = async function (deployer, n, accounts) {
   const acc = accounts[0];
   const controller = await Controller.deployed();
 
+  const oracle = await UniSwapOracle.deployed();
+  const valuer = await Valuer.deployed();
 
-  const dexModule = await deployer.deploy(
-    DEXModule,
+  const factory = await deployer.deploy(Factory, controller.address);
+  const basicModule = await deployer.deploy(BasicModule, controller.address);
+  const navModule = await deployer.deploy(
+    NAVModule,
     controller.address,
     consts.UNISWAP.weth.test
   );
@@ -27,5 +31,10 @@ module.exports = async function (deployer, n, accounts) {
   // // SetValuer resource will always be resource ID 2 in the system
   // uint256 constant internal SET_VALUER_RESOURCE_ID = 2;
 
-  await controller.addModule(dexModule.address);
+  await controller.initialize(
+    [factory.address],
+    [basicModule.address, navModule.address],
+    [oracle.address, valuer.address],
+    [1, 2]
+  );
 };

@@ -1,7 +1,7 @@
 const UniSwapAdapter = artifacts.require('UniSwapAdapter');
 const UniSwapOracle = artifacts.require('UniSwapOracle');
 const Valuer = artifacts.require('Valuer');
-const Controller = artifacts.require('TPNLController');
+const Controller = artifacts.require('Controller');
 const consts = require('../consts');
 
 const tokenSupply = BigInt(100000000 * 10 ** 18).toString();
