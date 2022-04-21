@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 dotenv.config();
-const { DEPLOYER_PRIVATE_KEY, INFURA_PROJECT_ID, ETHERSCAN_API, BSCSCANAPIKEY } = process.env;
+const { DEPLOYER_PRIVATE_KEY, INFURA_PROJECT_ID, ETHERSCAN_API, BSCSCANAPIKEY, SNOWTRACE } = process.env;
 
 module.exports = {
   // Uncommenting the defaults below
@@ -54,6 +54,16 @@ module.exports = {
       networkCheckTimeout: 60 * 60 * 1000,
       skipDryRun: false
     },
+    fuji: {
+      provider: () => new HDWalletProvider({
+        privateKeys: [DEPLOYER_PRIVATE_KEY],
+        providerOrUrl: `https://api.avax-test.network/ext/bc/C/rpc`
+      }),
+      network_id: 43113,
+      confirmations: 5,
+      networkCheckTimeout: 60 * 60 * 1000,
+      skipDryRun: true
+    }
   },
   console: {
     require: [{ path: './console.js' }],
@@ -63,7 +73,8 @@ module.exports = {
   ],
   api_keys: {
     etherscan: ETHERSCAN_API,
-    bscscan: BSCSCANAPIKEY
+    bscscan: BSCSCANAPIKEY,
+    snowtrace: SNOWTRACE,
   },
   compilers: {
     solc: {

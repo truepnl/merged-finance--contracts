@@ -9,8 +9,9 @@ const toBig = (amount) => {
 }
 // const setToken = "0xcfc6Aca3B1bF8A07f05CC25951B07Bc688285736"; 
 //const setToken = "0xc9849b14F8F826a39964Bcc2eA6f482C4a78a153";
-const setToken = "0xdb197117868cdF563D8BA8C5f9206D8080ef77b4";
+// const setToken = "0xdb197117868cdF563D8BA8C5f9206D8080ef77b4";
 // const setToken = "0x6DF58e3B98d8fbc94b25e531ab15BD2AA8B4E0d6";
+const setToken = "0xE3B46901E84fB11Eb83fefe94c82249427ecC8c5";
 module.exports = async function(callback) {
   const tradeModule = await TradeModule.deployed();
   const setTokenC = await SetToken.at(setToken);

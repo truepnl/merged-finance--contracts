@@ -22,25 +22,25 @@ module.exports = async function(callback) {
   try {
     const setToken = await factory.create( 
       [
-        consts.TEST_TOKENS.ETH,
-        consts.TEST_TOKENS.BNB,
         consts.TEST_TOKENS.AVAX,
-        consts.TEST_TOKENS.Near,
-        consts.TEST_TOKENS.Chromia,
-        consts.TEST_TOKENS.MATIC,
+        consts.TEST_TOKENS.JOE,
+        consts.TEST_TOKENS.XAVA,
+        consts.TEST_TOKENS.QI,
+        consts.TEST_TOKENS.PTP,
+        consts.TEST_TOKENS.PNG,
       ],
       [
-        toB(1, 16),
-        toB(52, 16),
-        toB(16, 16),
-        toB(1, 18),
-        toB(20, 18),
-        toB(58,17),
+        toB(6, 17),
+        toB(35, 18),
+        toB(8, 18),
+        toB(517, 18),
+        toB(3, 18),
+        toB(77,18),
       ],
       [basicModule.address, navModule.address],
       acc,
-      "Blockchain index",
-      "BSI"
+      "Avalaunch index",
+      "AVI"
     );
     const addr = setToken.logs[0].args._setToken;
     console.log(addr);

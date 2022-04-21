@@ -10,6 +10,9 @@ module.exports = async function (deployer, n, accounts) {
   // IController _controller,
   //       address _uniswapFactory,
   //       IUniswapV2Pair[] memory _uniswapPools
+  console.log(controller.address);
+  console.log(consts.UNISWAP.address.test);
+  console.log(consts.UNISWAP.pools.test);
   const adapter = await deployer.deploy(
     UniSwapAdapter,
     controller.address,
