@@ -1,0 +1,24 @@
+{
+  "name": "tokenset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "@setprotocol/set-protocol-v2": "^0.1.0",
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "dotenv": "^10.0.0",
+    "key-file-storage": "^2.2.10",
+    "truffle-plugin-verify": "^0.5.18",
+    "truffle-privatekey-provider": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
